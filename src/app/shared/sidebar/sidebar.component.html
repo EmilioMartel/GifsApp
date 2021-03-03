@@ -1,0 +1,21 @@
+<div id="sidebar" class="bg-dark border-right p-3">
+    
+    <h3 class="text-light d-flex justify-content-center">Gifs-App</h3>
+    
+    <hr class="text-white">
+    
+    <div *ngIf="obtenerGifs.length != 0 else sinBusqueda " class="list-group list-reset">
+        <a id="itemHistorial"
+            *ngFor="let item of obtenerGifs"  
+            class="list-group-item list-group-item-action"
+            (click)="buscar(item)"
+           >
+            {{item | titlecase}} 
+        </a>       
+    </div>
+
+    <ng-template #sinBusqueda>
+        <h5 class="text-light d-flex justify-content-center">Sin Búsqueda</h5>
+    </ng-template>
+
+</div>
